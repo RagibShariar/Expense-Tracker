@@ -37,6 +37,7 @@ const ExpenseContainer = () => {
       category,
       amount: amountValue,
       date: formatDate(date),
+      rawDate: date,
     };
 
     if (transactionType === "Income") {
@@ -127,7 +128,7 @@ const ExpenseContainer = () => {
     setTransactionType(type);
     setCategory(transaction.category);
     setAmount(transaction.amount.toString());
-    setDate(transaction.date);
+    setDate(transaction.rawDate);
     setEditingId(transaction.id);
   };
 
