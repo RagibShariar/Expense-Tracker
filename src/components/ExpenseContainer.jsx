@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { formatDate } from "../utils/formatDate ";
 import BalanceSummary from "./BalanceSummary";
 import ExpenseForm from "./ExpenseForm";
 import ExpenseSummary from "./ExpenseSummary";
@@ -35,7 +36,7 @@ const ExpenseContainer = () => {
       id: editingId || crypto.randomUUID(),
       category,
       amount: amountValue,
-      date,
+      date: formatDate(date),
     };
 
     if (transactionType === "Income") {
